@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="top">
+    </ui:define>
+
+    <ui:define name="left">
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form>
+        <h:dataTable  value="#{products.all}" var="prod">
+
+            <f:facet name="header">
+                <h:outputText value="Prooducts" />
+            </f:facet> 
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Id" />
+                </f:facet> 
+                <h:outputText value="#{prod.id}"></h:outputText>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Name" />
+                </f:facet> 
+                <h:outputText value="#{prod.name}"></h:outputText>
+            </h:column>
+
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Price" />
+                </f:facet> 
+                <h:outputText value="#{prod.price}"></h:outputText>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Edit" />
+                </f:facet> 
+                <h:commandLink actionListener="#{editProduct.actionListener(prod.id, prod.name, prod.price)}"    
+                                   action="editProduct?faces-redirect=true" >Edit</h:commandLink> 
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Delete" />
+                </f:facet> 
+                <h:commandLink actionListener="#{deleteProduct.actionListener(prod.id)}"    
+                                   action="deleteProduct?faces-redirect=true" >Delete</h:commandLink> 
+            </h:column>
+
+            <f:facet name="footer">
+                <h:outputText value="End of line" />
+            </f:facet> 
+
+        </h:dataTable>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

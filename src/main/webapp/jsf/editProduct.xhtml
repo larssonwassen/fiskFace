@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="top">
+    </ui:define>
+
+    <ui:define name="left">
+    </ui:define>
+
+    <ui:define name="right">
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form>
+            <h:inputHidden value="#{editProduct.id}" />
+            Name:<h:inputText value="#{editProduct.name}" />
+            Price:<h:inputText value="#{editProduct.price}" />
+            <h:commandButton value="Done" action="#{editProduct.action}" />
+        </h:form>
+        <h:messages></h:messages>
+    </ui:define>
+
+</ui:composition>

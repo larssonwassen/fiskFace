@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="content">
+        Add new product
+
+        <h:form>
+            Name:<h:inputText value="#{newProduct.name}" />
+            Price:<h:inputText value="#{newProduct.price}" />
+            <h:commandButton value="OK" action="#{newProduct.add}" />
+        </h:form>
+        <h:messages></h:messages>
+    </ui:define>
+
+</ui:composition>
